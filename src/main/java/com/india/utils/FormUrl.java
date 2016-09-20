@@ -1,9 +1,21 @@
 package main.java.com.india.utils;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+
 import main.java.com.india.common.Urlprop;
 
 public interface FormUrl {
-	String form(String resrcTyp, String resrcId, String apiKey, String limit);
+	String readData(String apiKey, String resrcType, String limit) throws MalformedURLException, IOException;
+	
+	default String form(String resrcTyp, String resrcId, String apiKey, String limit){
+		StringBuffer url = new StringBuffer(Urlprop.MAP.getString("URL_BASE"));
+		url.append(Urlprop.MAP.getString(resrcTyp)).append("?");
+		url.append(setResrcId(resrcId));//set resource id
+		url.append("&").append(setApiKey(apiKey));//set API key
+		url.append("&").append(setLimit(limit));//set record limit
+		return url.toString();
+	}
 	
 	default String setResrcId(String resrcId){
 		return "resource_id="+resrcId;
