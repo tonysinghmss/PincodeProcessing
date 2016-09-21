@@ -3,11 +3,14 @@ package main.java.com.india.to.rail;
 import java.util.List;
 import java.util.Map;
 
+import com.google.gson.annotations.SerializedName;
+
 import main.java.com.india.to.common.FieldRec;
 
 public class Railway {
 	private String help;
 	private boolean success;
+	@SerializedName("total_records")
 	private long totalRecords;
 	private long count;
 	private Map<String, FieldRec> fields;

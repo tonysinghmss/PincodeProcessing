@@ -1,9 +1,12 @@
 package main.java.com.india.to.common;
 
+import com.google.gson.annotations.SerializedName;
+
 public class FieldRec {
 	private String type;
 	private String size;
-	private Integer length;	
+	private Integer length;
+	@SerializedName("not null")
 	private boolean notNull;
 	private String description;
 	

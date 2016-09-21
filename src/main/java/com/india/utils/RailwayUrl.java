@@ -30,4 +30,5 @@ public class RailwayUrl implements FormUrl {
 		}
 		return buff.toString();
 	}
+	
 }

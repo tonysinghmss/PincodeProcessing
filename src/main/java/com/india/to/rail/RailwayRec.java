@@ -1,20 +1,33 @@
 package main.java.com.india.to.rail;
 
+import com.google.gson.annotations.SerializedName;
+
 public class RailwayRec {
 	private long id;
 	private String timestamp;
+	@SerializedName("Train No.")
 	private String trainNo;
+	@SerializedName("train Name")
 	private String trainName;
 	private int islno;
+	@SerializedName("station Code")
 	private String stationCode;
+	@SerializedName("Station Name")
 	private String stationName;
+	@SerializedName("Arrival time")
 	private String arrivalTime;
+	@SerializedName("Departure time")
 	private String departureTime;
 	private long distance;
+	@SerializedName("Source Station Code")
 	private String srcStationcode;
+	@SerializedName("source Station Name")
 	private String srcStationName;
+	@SerializedName("Destination station Code")
 	private String destStationcode;
+	@SerializedName("Destination Station Name")
 	private String destStationName;
+	
 	public long getId() {
 		return id;
 	}
